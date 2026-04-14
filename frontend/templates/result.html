@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnostic Results | Brain Tumor Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <h2>Brain Tumor Interpretability Engine</h2>
+    <nav>
+        <a href="/">Home</a>
+        <a href="#">Analysis Log</a>
+        <a href="#">Expert Review</a>
+        <button class="login-btn">Secure Portal</button>
+    </nav>
+</header>
+
+<div class="result-container">
+
+   <div class="main-container">
+
+    <div class="card mri-card">
+        <h3 class="section-title"><i class="fas fa-microscope"></i> Diagnostic Visualization</h3>
+        <div class="mri-content">
+            <!-- LEFT: MRI IMAGE -->
+            <div class="mri-image">
+                <img src="{{ image_path }}" alt="Original MRI">
+                <p class="img-label">Original MRI Scan</p>
+            </div>
+
+            <div class="mri-image">
+                <img src="{{ heatmap_path }}" alt="Focus Heatmap">
+                <p class="img-label">Interpretability (Grad-CAM++)</p>
+            </div>
+
+            <div class="mri-details">
+                <p><span><i class="fas fa-dna"></i> Type:</span> {{ result.tumor_type }}</p>
+                <p><span><i class="fas fa-chart-line"></i> Confidence:</span> {{ result.confidence }}</p>
+                <div class="progress-bar">
+                    <div class="progress" style="width: {{ result.confidence }}; background: {% if 'No' in result.tumor_type %}#2ecc71{% else %}#e74c3c{% endif %};"></div>
+                </div>
+                
+                <div style="margin-top: 30px;">
+                    <a href="{{ url_for('download_report', report_id=report_id) }}" class="download-btn">
+                        <i class="fas fa-file-pdf"></i> Download Diagnostic Report
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card analysis-card">
+        <h3 class="section-title"><i class="fas fa-file-medical-alt"></i> Clinical Analysis Report</h3>
+        <div class="analysis-content">
+            <p><span class="highlight">Description:</span> {{ result.description }}</p>
+            <p><span><i class="fas fa-lightbulb"></i> Medical Suggestion:</span> {{ result.suggestion }}</p>
+            <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border-radius: 8px; border-left: 4px solid #f1c40f;">
+                <p><small><i class="fas fa-info-circle"></i> This analysis is computer-generated for supporting medical professionals. Final diagnosis should be performed by a qualified radiologist.</small></p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</body>
+</html>

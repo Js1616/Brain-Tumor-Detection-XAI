@@ -1,0 +1,351 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #0b2a4a, #1b4d7a);
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.3);
+}
+
+nav a {
+    margin: 0 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.login-btn {
+    padding: 8px 15px;
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+}
+
+.hero {
+   display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:60px;
+}
+.left{
+    font-size: 35px;
+}
+.Detection{
+    color:#5593c9;
+}
+
+/* .upload-box {
+    border: 2px dashed #aaa;
+    padding: 40px;
+    text-align: center;
+} */
+
+.upload-box {
+    border: 2px dashed rgba(255,255,255,0.4);
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+
+    width: 350px;          /* FIX WIDTH */
+    height: auto;          /* PREVENT STRETCH */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upload-box input {
+    display: none;
+}
+
+.upload-box label {
+    display: block;
+    cursor: pointer;
+    padding: 20px;
+    border: 1px dashed rgba(255,255,255,0.3);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.upload-box button {
+    padding: 10px 20px;
+    background: #2e7df6;
+    border: none;
+    color: white;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Result Page */
+
+.result-container {
+    display: flex;
+    padding: 40px;
+}
+
+.image-section img {
+    width: 300px;
+}
+
+.info-section {
+    margin-left: 40px;
+}
+
+.hero {
+    background-image: url("../uploads/img2.png");
+    background-size: cover;        /* full screen */
+    background-position: center;   /* center image */
+    background-repeat: no-repeat;  /* no repeat */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   /* IMPORTANT */
+    padding: 60px;
+    min-height: 90vh;
+}
+.result-container{
+    background-image: url("../uploads/x-ray.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+
+
+/* MAIN CONTAINER */
+.main-container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* COMMON CARD STYLE */
+.card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    /* backdrop-filter: blur(10px); */
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* SECTION TITLE */
+.section-title {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+}
+
+/* MRI CARD LAYOUT */
+.mri-content {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+/* MRI IMAGE */
+.mri-image img {
+    width: 250px;
+    border-radius: 8px;
+}
+
+.img-label {
+    text-align: center;
+    margin-top: 8px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* DETAILS */
+.mri-details p {
+    margin: 10px 0;
+    font-size: 25px;
+}
+
+.mri-details span {
+    font-weight: bold;
+}
+
+/* PROGRESS BAR */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.progress {
+    height: 100%;
+    background: #2ecc71;
+    border-radius: 5px;
+}
+
+/* ANALYSIS */
+.analysis-content p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.analysis-content span {
+    font-weight: bold;
+}
+
+.highlight {
+    color: #f1c40f;
+}
+/* =========================
+   MOBILE RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    /* HERO SECTION */
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+
+    .left {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    /* UPLOAD BOX */
+    .upload-box {
+        width: 100%;        /* full width on mobile */
+        max-width: 320px;
+    }
+
+    /* FEATURES */
+    .features {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+    /* RESULT PAGE */
+    .result-container {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .image-section img {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .info-section {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    /* MAIN CONTAINER */
+    .main-container {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+    /* MRI SECTION */
+    .mri-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .mri-image img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .mri-details p {
+        font-size: 18px;
+    }
+
+    /* ANALYSIS TEXT */
+    .analysis-content p {
+        font-size: 14px;
+    }
+}
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+    .left {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 16px;
+    }
+
+    .mri-details p {
+        font-size: 16px;
+    }
+
+    .upload-box label {
+        padding: 15px;
+    }
+
+    .upload-box button {
+        width: 100%;
+    }
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #2e7df6;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.download-btn:hover {
+    background: #1b4d7a;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    color: #fff;
+}
+
+.download-btn i {
+    margin-right: 10px;
+}
