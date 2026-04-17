@@ -5,7 +5,7 @@ venv/
 __pycache__/
 *.pyc
 *.pyo
-src/data/balanced_dataset/
-src/data/brain_tumor_dataset_final/
-src/data/brain_tumor_dataset_resized/
-src/data/contrast_dataset/
+data/balanced_dataset/
+data/brain_tumor_dataset_final/
+data/brain_tumor_dataset_resized/
+data/contrast_dataset/

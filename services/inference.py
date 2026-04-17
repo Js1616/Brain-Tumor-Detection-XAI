@@ -8,9 +8,10 @@ from torchvision import transforms
 import timm
 import sys
 
-from backend.utils.explainable import GradCAMPP, load_model, preprocess_image, visualize_and_save
+from utils.explainable import GradCAMPP, load_model, preprocess_image, visualize_and_save
 
-MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'models', 'best_model.pth')
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, 'models', 'best_model.pth')
 CLASS_LABELS = ['glioma', 'meningioma', 'pituitary', 'notumor']
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 

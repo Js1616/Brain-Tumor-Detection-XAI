@@ -5,12 +5,12 @@ from flask import Flask, render_template, request, redirect, url_for, send_file
 from werkzeug.utils import secure_filename
 from dotenv import load_dotenv
 
-from backend.services.inference import get_engine
-from backend.services.report_generator import generate_pdf_report
+from services.inference import get_engine
+from services.report_generator import generate_pdf_report
 
 load_dotenv()
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend')
 
 app = Flask(
